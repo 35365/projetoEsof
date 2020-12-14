@@ -1,0 +1,22 @@
+@startuml useCase
+
+left to right direction
+
+actor Cliente
+actor Empregado
+actor Gestor
+
+package WebServiceREST{
+
+    Cliente --- (Consultar informações dos projetos)
+    (Consultar informações dos projetos) <|--- (Execução efetiva das tarefas)
+    (Consultar informações dos projetos) <|--- (Estado do projeto)
+    (Consultar informações dos projetos) <|--- (Percentual de conclusão da tarefa)
+
+    Gestor --- (Percentual de conclusão da tarefa)
+    Empregado --- (Períodos de tempo para a tarefa)
+
+    (Percentual de conclusão da tarefa) <|--- (Períodos de tempo para a tarefa)
+}
+
+@enduml

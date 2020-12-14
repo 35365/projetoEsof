@@ -1,0 +1,49 @@
+@startuml diagramaClasses
+
+skinparam classAttributeIconSize 0
+package "main/java/pt/ufp/info/esof/Models"{
+
+    class Utilizador{
+            - userName:String
+            - password:String
+            - nome:String
+    }
+    class Cliente{
+        + adicionarProjeto(Projeto projeto):void
+    }
+    class Projeto{
+        - percentual:int
+        + tempoEstimado():float
+        + valorEstimado():float
+        + getEstado():void
+    }
+    class Tarefa{
+        - efetiva:boolean
+        + horasEstimadas():float
+        + custo(): float
+    }
+    class Empregado{
+        - cargo:Cargo
+        - horasTarefa: float
+        + valorHora():int
+    }
+
+    Enum Cargo{
+    + DesenvolvedorJunior: Cargo
+    + AnalistaJunior: Cargo
+    + DesenvolvedorSenior: Cargo
+    + AnalistaSenior: Cargo
+    }
+    'Dependencias
+    Utilizador <|-- Cliente
+    Utilizador <|-- Empregado
+
+    'Atributos
+    Cliente "1" --"*" Projeto
+    Projeto "1" -- "*" Tarefa
+    Tarefa "*" -- "1" Empregado
+    Empregado -- Cargo
+
+}
+
+@enduml

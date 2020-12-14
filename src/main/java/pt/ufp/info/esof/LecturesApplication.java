@@ -1,4 +1,4 @@
-package pt.ufp.info.esof.lectures;
+package pt.ufp.info.esof;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
