@@ -1,6 +1,5 @@
 package pt.ufp.info.esof.controladores;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +10,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import pt.ufp.info.esof.Models.Tarefa;
 import pt.ufp.info.esof.servicos.TarefaServico;
 
-import java.awt.*;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;

@@ -2,7 +2,6 @@ package pt.ufp.info.esof.Models;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.ManyToAny;
 
 import javax.persistence.*;
 

@@ -1,6 +1,5 @@
 package pt.ufp.info.esof.servicos;
 
-import com.fasterxml.jackson.databind.util.ArrayIterator;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

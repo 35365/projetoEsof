@@ -2,7 +2,6 @@ package pt.ufp.info.esof.servicos.facade;
 
 import org.springframework.stereotype.Service;
 import pt.ufp.info.esof.Models.Tarefa;
-import pt.ufp.info.esof.Repositorio.TarefaRepositorio;
 import pt.ufp.info.esof.servicos.TarefaServico;
 
 import java.util.Optional;

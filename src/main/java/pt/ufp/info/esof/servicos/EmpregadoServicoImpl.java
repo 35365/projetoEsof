@@ -1,7 +1,6 @@
 package pt.ufp.info.esof.servicos;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import pt.ufp.info.esof.Models.Empregado;
 import pt.ufp.info.esof.Repositorio.EmpregadoRepositorio;

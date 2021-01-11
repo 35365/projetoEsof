@@ -13,14 +13,12 @@ public class Inicializacao implements ApplicationListener<ContextRefreshedEvent>
     private final ClienteRepositorio clienteRepositorio;
     private final EmpregadoRepositorio empregadoRepositorio;
     private final ProjetoRepositorio projetoRepositorio;
-    private final TarefaRepositorio tarefaRepositorio;
 
     @Autowired
-    public Inicializacao(ClienteRepositorio clienteRepositorio, EmpregadoRepositorio empregadoRepositorio, ProjetoRepositorio projetoRepositorio, TarefaRepositorio tarefaRepositorio) {
+    public Inicializacao(ClienteRepositorio clienteRepositorio, EmpregadoRepositorio empregadoRepositorio, ProjetoRepositorio projetoRepositorio) {
         this.clienteRepositorio = clienteRepositorio;
         this.empregadoRepositorio = empregadoRepositorio;
         this.projetoRepositorio = projetoRepositorio;
-        this.tarefaRepositorio = tarefaRepositorio;
     }
 
     @Override
