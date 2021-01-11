@@ -13,6 +13,7 @@ public class Tarefa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String nome;
     @ManyToOne
     private Projeto projeto;
     @ManyToOne

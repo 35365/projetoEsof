@@ -4,9 +4,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import pt.ufp.info.esof.Models.Empregado;
+import pt.ufp.info.esof.dtos.DTOStaticFactory;
 import pt.ufp.info.esof.dtos.EmpregadoCriarDTO;
 import pt.ufp.info.esof.dtos.EmpregadoDTO;
-import pt.ufp.info.esof.dtos.conversores.ConverterEmpregadoParaDTO;
 import pt.ufp.info.esof.servicos.EmpregadoServico;
 
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ import java.util.Optional;
 @RequestMapping("/empregado")
 public class EmpregadoControlador {
     private final EmpregadoServico empregadoServico;
-    private final ConverterEmpregadoParaDTO converterEmpregadoParaDTO = new ConverterEmpregadoParaDTO();
+    private final DTOStaticFactory dtoStaticFactory = DTOStaticFactory.getInstance();
 
     public EmpregadoControlador(EmpregadoServico empregadoServico) {
         this.empregadoServico = empregadoServico;
@@ -26,7 +26,7 @@ public class EmpregadoControlador {
     @GetMapping()
     public ResponseEntity<Iterable<EmpregadoDTO>> getAllEmpregado(){
         List<EmpregadoDTO> empregadoDTOS = new ArrayList<>();
-        empregadoServico.findAll().forEach(empregado -> empregadoDTOS.add(converterEmpregadoParaDTO.converter(empregado)));
+        empregadoServico.findAll().forEach(empregado -> empregadoDTOS.add(dtoStaticFactory.empregadoDTO(empregado)));
         return ResponseEntity.ok(empregadoDTOS);
     }
 
@@ -35,7 +35,7 @@ public class EmpregadoControlador {
 
         Optional<Empregado> optionalEmpregado=empregadoServico.findById(id);
         return optionalEmpregado.map(empregado -> {
-            EmpregadoDTO empregadoDTO= converterEmpregadoParaDTO.converter(empregado);
+            EmpregadoDTO empregadoDTO= dtoStaticFactory.empregadoDTO(empregado);
             return ResponseEntity.ok(empregadoDTO);
         }).orElseGet(()->ResponseEntity.notFound().build());
     }
@@ -44,6 +44,6 @@ public class EmpregadoControlador {
     public ResponseEntity<EmpregadoDTO> criarEmpregado(@RequestBody EmpregadoCriarDTO empregado){
 
         Optional<Empregado> optionalEmpregado=empregadoServico.criarEmpregado(empregado.converter());
-        return optionalEmpregado.map(empregado1 -> ResponseEntity.ok(converterEmpregadoParaDTO.converter(empregado1))).orElseGet(()-> ResponseEntity.badRequest().build());
+        return optionalEmpregado.map(empregado1 -> ResponseEntity.ok(dtoStaticFactory.empregadoDTO(empregado1))).orElseGet(()-> ResponseEntity.badRequest().build());
     }
 }

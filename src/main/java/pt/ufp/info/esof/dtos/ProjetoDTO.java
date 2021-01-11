@@ -7,7 +7,6 @@ import java.util.List;
 
 @Data
 public class ProjetoDTO {
-    private List<TarefaCriarDTO> tarefas = new ArrayList<>();
-    private Long clienteId;
+    private String nome;
 
 }

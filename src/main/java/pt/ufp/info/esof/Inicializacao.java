@@ -34,6 +34,7 @@ public class Inicializacao implements ApplicationListener<ContextRefreshedEvent>
         empregado1.setUsername("patricia");
 
         Tarefa tarefa1= new Tarefa();
+        tarefa1.setNome("tarefa1");
         tarefa1.setEfetiva(false);
         tarefa1.setEmpregado(empregado1);
         empregado1.adicionarTarefa(tarefa1);
@@ -45,6 +46,7 @@ public class Inicializacao implements ApplicationListener<ContextRefreshedEvent>
         empregado2.setUsername("maria");
 
         Tarefa tarefa2= new Tarefa();
+        tarefa2.setNome("tarefa2");
         tarefa2.setEfetiva(false);
         tarefa2.setEmpregado(empregado2);
         empregado2.adicionarTarefa(tarefa2);
@@ -57,12 +59,14 @@ public class Inicializacao implements ApplicationListener<ContextRefreshedEvent>
         empregado3.setUsername("pedro");
 
         Tarefa tarefa3= new Tarefa();
+        tarefa3.setNome("tarefa3");
         tarefa3.setEfetiva(false);
         tarefa3.setEmpregado(empregado3);
         empregado3.adicionarTarefa(tarefa3);
         this.empregadoRepositorio.save(empregado3);
 
         Projeto projeto1= new Projeto();
+        projeto1.setNome("projeto1");
         projeto1.adicionarTarefa(tarefa1);
         tarefa1.setProjeto(projeto1);
         projeto1.adicionarTarefa(tarefa2);

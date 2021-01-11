@@ -5,15 +5,13 @@ import pt.ufp.info.esof.Models.Tarefa;
 
 @Data
 public class TarefaCriarDTO implements CriarDTO<Tarefa> {
-    private ProjetoCriarDTO projeto;
-    private EmpregadoCriarDTO empregado;
+    private String nome;
 
 
     @Override
     public Tarefa converter() {
         Tarefa tarefa = new Tarefa();
-        tarefa.setEmpregado(empregado.converter());
-        tarefa.setProjeto(projeto.converter());
+        tarefa.setNome(this.nome);
         return tarefa;
     }
 }

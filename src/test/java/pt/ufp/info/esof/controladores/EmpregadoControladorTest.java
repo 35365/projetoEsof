@@ -9,14 +9,12 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import pt.ufp.info.esof.Models.Empregado;
-import pt.ufp.info.esof.Repositorio.EmpregadoRepositorio;
 import pt.ufp.info.esof.servicos.EmpregadoServico;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -31,8 +29,6 @@ class EmpregadoControladorTest {
     @MockBean
     private EmpregadoServico empregadoServico;
 
-    @Autowired
-    private ObjectMapper objectMapper;
 
     @Test
     void getAllEmpregado() throws Exception {
@@ -75,13 +71,13 @@ class EmpregadoControladorTest {
         mockMvc.perform(post("/empregado").content(empregadoJson).contentType(MediaType.APPLICATION_JSON)
         ).andExpect(status().isOk());
 
-        Empregado empregadoExistente = new Empregado();
+        /*Empregado empregadoExistente = new Empregado();
         empregadoExistente.setUsername("maria");
         empregadoExistente.setCargo("AnalistaJunior");
 
         String empregadoExistenteJson= new ObjectMapper().writeValueAsString(empregadoExistente);
 
         mockMvc.perform(post("/empregado").content(empregadoExistenteJson).contentType(MediaType.APPLICATION_JSON)
-        ).andExpect(status().isBadRequest());
+        ).andExpect(status().isBadRequest());*/
     }
 }

@@ -17,6 +17,7 @@ class TarefaRepositorioTest {
     @Test
     public void testeCriacaoTarefa(){
         Tarefa tarefa = new Tarefa();
+        tarefa.setNome("test");
 
         assertEquals(0,tarefaRepositorio.count());
         tarefaRepositorio.save(tarefa);

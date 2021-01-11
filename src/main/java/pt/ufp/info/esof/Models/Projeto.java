@@ -16,6 +16,7 @@ public class Projeto {
     private Long id;
 
     private int percentual;
+    private String nome;
 
     @OneToMany(mappedBy = "projeto")
     private List<Tarefa> tarefas = new ArrayList<Tarefa>();

@@ -1,12 +1,15 @@
 package pt.ufp.info.esof.dtos;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class EmpregadoDTO {
     private String username;
-    private List<TarefaCriarDTO> tarefas= new ArrayList<>();
 }

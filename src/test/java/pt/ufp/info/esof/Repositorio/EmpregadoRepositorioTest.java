@@ -12,8 +12,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class EmpregadoRepositorioTest {
     @Autowired
     private EmpregadoRepositorio empregadoRepositorio;
-    @Autowired
-    private TarefaRepositorio tarefaRepositorio;
 
     @Test
     public void testeCriacaoEmpregado(){
@@ -24,16 +22,10 @@ class EmpregadoRepositorioTest {
         empregado.setCargo("DesenvolvedorJunior");
         empregado.setUsername("empregado");
 
-        Tarefa tarefa = new Tarefa();
-        tarefa.setEmpregado(empregado);
-
-        empregado.adicionarTarefa(tarefa);
 
         assertEquals(0,empregadoRepositorio.count());
-        assertEquals(0,tarefaRepositorio.count());
         empregadoRepositorio.save(empregado);
         assertEquals(1,empregadoRepositorio.count());
-        assertEquals(1,tarefaRepositorio.count());
 
         assertTrue(empregadoRepositorio.findByUsername(empregado.getUsername()).isPresent());
     }
