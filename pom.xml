@@ -8,10 +8,10 @@
         <version>2.3.3.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>pt.ufp.info.esof</groupId>
-    <artifactId>lectures</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>lectures</name>
+    <groupId>pt.ufp.info</groupId>
+    <artifactId>esof</artifactId>
+    <version>1.0</version>
+    <name>esof</name>
     <description>Project to support practical classes</description>
 
     <properties>
@@ -60,6 +60,22 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.googlecode.princeton-java-algorithms/algorithms -->
+        <dependency>
+            <groupId>com.googlecode.princeton-java-algorithms</groupId>
+            <artifactId>algorithms</artifactId>
+            <version>4.0.1</version>
+        </dependency>
+
+        <!--        https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>

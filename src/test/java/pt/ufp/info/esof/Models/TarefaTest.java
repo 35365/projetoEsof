@@ -11,7 +11,7 @@ class TarefaTest {
         Tarefa tarefa = new Tarefa();
 
         Empregado empregadoDJ = new Empregado();
-        empregadoDJ.setCargo(Cargo.DesenvolvedorJunior);
+        empregadoDJ.setCargo("DesenvolvedorJunior");
         empregadoDJ.setHorasTarefa(20);
 
         tarefa.setEmpregado(empregadoDJ);
@@ -26,7 +26,7 @@ class TarefaTest {
         Tarefa tarefa = new Tarefa();
 
         Empregado empregadoDJ = new Empregado();
-        empregadoDJ.setCargo(Cargo.DesenvolvedorJunior);
+        empregadoDJ.setCargo("DesenvolvedorJunior");
         empregadoDJ.setHorasTarefa(20);
 
         tarefa.setEmpregado(empregadoDJ);
@@ -34,7 +34,7 @@ class TarefaTest {
         assertEquals(200,tarefa.custo());
 
         Empregado empregadoAJ = new Empregado();
-        empregadoAJ.setCargo(Cargo.AnalistaJunior);
+        empregadoAJ.setCargo("AnalistaJunior");
         empregadoAJ.setHorasTarefa(2);
 
         tarefa.setEmpregado(empregadoAJ);
@@ -42,7 +42,7 @@ class TarefaTest {
         assertEquals(40,tarefa.custo());
 
         Empregado empregadoDS = new Empregado();
-        empregadoDS.setCargo(Cargo.DesenvolvedorSenior);
+        empregadoDS.setCargo("DesenvolvedorSenior");
         empregadoDS.setHorasTarefa(2);
 
         tarefa.setEmpregado(empregadoDS);
@@ -50,7 +50,7 @@ class TarefaTest {
         assertEquals(80,tarefa.custo());
 
         Empregado empregadoAS = new Empregado();
-        empregadoAS.setCargo(Cargo.AnalistaSenior);
+        empregadoAS.setCargo("AnalistaSenior");
         empregadoAS.setHorasTarefa(1);
 
         tarefa.setEmpregado(empregadoAS);

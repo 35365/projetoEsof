@@ -1,4 +1,4 @@
-package pt.ufp.info.esof.lectures;
+package pt.ufp.info.esof;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

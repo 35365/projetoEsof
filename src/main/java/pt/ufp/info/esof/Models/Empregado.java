@@ -1,7 +1,10 @@
 package pt.ufp.info.esof.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -17,6 +20,7 @@ enum Cargo{
 @Getter
 @Setter
 @Entity
+@EqualsAndHashCode(callSuper = true)
 public class Empregado extends Utilizador{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +28,8 @@ public class Empregado extends Utilizador{
 
     private Cargo cargo;
     private int horasTarefa;
-    @OneToMany(mappedBy = "empregado")
+    @JsonIgnore
+    @OneToMany(mappedBy = "empregado",cascade = CascadeType.ALL)
     private List<Tarefa> tarefas = new ArrayList<Tarefa>();
 
     public int valorHora(){
@@ -43,4 +48,33 @@ public class Empregado extends Utilizador{
         return 0;
     }
 
+    public void setCargo(String s) {
+        if(s.compareTo("DesenvolvedorJunior")==0){
+            cargo=Cargo.DesenvolvedorJunior;
+        }
+        else if(s.compareTo("AnalistaJunior")==0){
+            cargo=Cargo.AnalistaJunior;
+        }
+        else if(s.compareTo("DesenvolvedorSenior")==0){
+            cargo=Cargo.DesenvolvedorSenior;
+        }
+        else if(s.compareTo("AnalistaSenior")==0){
+            cargo=Cargo.AnalistaSenior;
+        }
+    }
+
+    public void adicionarTarefa(Tarefa tarefa){
+        if(!this.tarefas.contains(tarefa)){
+            this.tarefas.add(tarefa);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Empregado{" +
+                "id=" + id +
+                ", cargo=" + cargo +
+                ", horasTarefa=" + horasTarefa +
+                '}';
+    }
 }

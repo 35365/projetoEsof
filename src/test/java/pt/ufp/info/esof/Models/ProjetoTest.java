@@ -27,13 +27,13 @@ class ProjetoTest {
 
         Tarefa tarefa1 = new Tarefa();
         Empregado empregadoDJ = new Empregado();
-        empregadoDJ.setCargo(Cargo.DesenvolvedorJunior);
+        empregadoDJ.setCargo("DesenvolvedorJunior");
         empregadoDJ.setHorasTarefa(20);
         tarefa1.setEmpregado(empregadoDJ);
 
         Tarefa tarefa2 = new Tarefa();
         Empregado empregadoAJ = new Empregado();
-        empregadoAJ.setCargo(Cargo.AnalistaJunior);
+        empregadoAJ.setCargo("AnalistaJunior");
         empregadoAJ.setHorasTarefa(2);
         tarefa2.setEmpregado(empregadoAJ);
 
@@ -49,13 +49,13 @@ class ProjetoTest {
 
         Tarefa tarefa1 = new Tarefa();
         Empregado empregadoDJ = new Empregado();
-        empregadoDJ.setCargo(Cargo.DesenvolvedorJunior);
+        empregadoDJ.setCargo("DesenvolvedorJunior");
         empregadoDJ.setHorasTarefa(20);
         tarefa1.setEmpregado(empregadoDJ);
 
         Tarefa tarefa2 = new Tarefa();
         Empregado empregadoAJ = new Empregado();
-        empregadoAJ.setCargo(Cargo.AnalistaJunior);
+        empregadoAJ.setCargo("AnalistaJunior");
         empregadoAJ.setHorasTarefa(2);
         tarefa2.setEmpregado(empregadoAJ);
 
