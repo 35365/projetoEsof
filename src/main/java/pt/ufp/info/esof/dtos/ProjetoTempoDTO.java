@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProjetoDTO {
-    private String nome;
-
+public class ProjetoTempoDTO {
+    private int tempo;
 }

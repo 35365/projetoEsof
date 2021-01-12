@@ -1,6 +1,7 @@
 package pt.ufp.info.esof.dtos;
 
 import pt.ufp.info.esof.Models.Empregado;
+import pt.ufp.info.esof.Models.Projeto;
 import pt.ufp.info.esof.Models.Tarefa;
 
 /**
@@ -32,7 +33,26 @@ public class DTOStaticFactory {
     }
 
     public TarefaDTO tarefaDTO(Tarefa tarefa){
-        return TarefaDTO.builder().nome(tarefa.getNome()).build();
+        return TarefaDTO.builder()
+                .nome(tarefa.getNome())
+                .build();
+    }
+
+    public ProjetoDTO projetoDTO(Projeto projeto){
+        return ProjetoDTO.builder()
+                .nome(projeto.getNome())
+                .build();
+    }
+
+    public ProjetoValorDTO projetoValorDTO(Projeto projeto){
+        return ProjetoValorDTO.builder()
+                .valor(projeto.valorEstimado())
+                .build();
+    }
+    public ProjetoTempoDTO projetoTempoDTO(Projeto projeto){
+        return ProjetoTempoDTO.builder()
+                .tempo(projeto.tempoEstimado())
+                .build();
     }
 
 

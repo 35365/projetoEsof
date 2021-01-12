@@ -50,9 +50,13 @@ class EmpregadoControladorTest {
     void getEmpregadoById() throws Exception {
         when(empregadoServico.findById(1L)).thenReturn(Optional.of(new Empregado()));
 
-        mockMvc.perform(get("/empregado/1")).andExpect(status().isOk());
+        mockMvc.perform(
+                get("/empregado/1")
+        ).andExpect(status().isOk());
 
-        mockMvc.perform(get("/empregado/10")).andExpect(status().isNotFound());
+        mockMvc.perform(
+                get("/empregado/10")
+        ).andExpect(status().isNotFound());
 
     }
 
@@ -61,22 +65,21 @@ class EmpregadoControladorTest {
 
         Empregado empregado = new Empregado();
         empregado.setUsername("mm");
-        empregado.setCargo("AnalistaJunior");
-
-        when(this.empregadoServico.criarEmpregado(empregado)).thenReturn(Optional.of(empregado));
-
+        //empregado.setCargo("AnalistaJunior");
         String empregadoJson= new ObjectMapper().writeValueAsString(empregado);
 
+
+        when(this.empregadoServico.criarEmpregado(empregado)).thenReturn(Optional.of(empregado));
         mockMvc.perform(post("/empregado").content(empregadoJson).contentType(MediaType.APPLICATION_JSON)
         ).andExpect(status().isOk());
 
-        /*Empregado empregadoExistente = new Empregado();
+        Empregado empregadoExistente = new Empregado();
         empregadoExistente.setUsername("maria");
         empregadoExistente.setCargo("AnalistaJunior");
 
         String empregadoExistenteJson= new ObjectMapper().writeValueAsString(empregadoExistente);
 
         mockMvc.perform(post("/empregado").content(empregadoExistenteJson).contentType(MediaType.APPLICATION_JSON)
-        ).andExpect(status().isBadRequest());*/
+        ).andExpect(status().isBadRequest());
     }
 }

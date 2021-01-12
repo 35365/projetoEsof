@@ -44,6 +44,7 @@ public class EmpregadoControlador {
     public ResponseEntity<EmpregadoDTO> criarEmpregado(@RequestBody EmpregadoCriarDTO empregado){
 
         Optional<Empregado> optionalEmpregado=empregadoServico.criarEmpregado(empregado.converter());
-        return optionalEmpregado.map(empregado1 -> ResponseEntity.ok(dtoStaticFactory.empregadoDTO(empregado1))).orElseGet(()-> ResponseEntity.badRequest().build());
+        return optionalEmpregado.map(empregado1 -> ResponseEntity.ok(dtoStaticFactory.empregadoDTO(empregado1)))
+                .orElseGet(()-> ResponseEntity.badRequest().build());
     }
 }

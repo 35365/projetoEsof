@@ -30,6 +30,7 @@ class EmpregadoTest {
         assertEquals(0,empregado.getTarefas().size());
 
         Tarefa tarefa1 = new Tarefa();
+        tarefa1.setNome("nova tarefa");
         empregado.adicionarTarefa(tarefa1);
         assertEquals(1,empregado.getTarefas().size());
 
@@ -37,6 +38,7 @@ class EmpregadoTest {
         assertEquals(1,empregado.getTarefas().size());
 
         Tarefa tarefa2 = new Tarefa();
+        tarefa2.setNome("outra tarefa");
         empregado.adicionarTarefa(tarefa2);
         assertEquals(2,empregado.getTarefas().size());
 

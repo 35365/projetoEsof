@@ -1,5 +1,6 @@
 package pt.ufp.info.esof.Models;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,6 +11,7 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
+@EqualsAndHashCode
 public class Projeto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -50,5 +52,14 @@ public class Projeto {
      */
     public void getEstado(){
         System.out.println("Tempo estimado:"+tempoEstimado()+"Percentual do projeto:"+percentual+"\n");
+    }
+
+    @Override
+    public String toString() {
+        return "Projeto{" +
+                "id=" + id +
+                ", percentual=" + percentual +
+                ", nome='" + nome + '\'' +
+                '}';
     }
 }

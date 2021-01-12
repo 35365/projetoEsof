@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import pt.ufp.info.esof.Models.Tarefa;
 import pt.ufp.info.esof.dtos.DTOStaticFactory;
+import pt.ufp.info.esof.dtos.EmpregadoCriarDTO;
 import pt.ufp.info.esof.dtos.TarefaCriarDTO;
 import pt.ufp.info.esof.dtos.TarefaDTO;
 import pt.ufp.info.esof.servicos.TarefaServico;
@@ -26,5 +27,12 @@ public class TarefaControlador {
     public ResponseEntity<TarefaDTO> criarTarefa(@RequestBody TarefaCriarDTO tarefa){
         Optional<Tarefa> optionalTarefa = tarefaServico.criarTarefa(tarefa.converter());
         return optionalTarefa.map(tarefa1 -> ResponseEntity.ok(dtoStaticFactory.tarefaDTO(tarefa1))).orElseGet(()-> ResponseEntity.badRequest().build());
+    }
+
+    @PatchMapping("/{tarefaId}")
+    public ResponseEntity<TarefaDTO> adicionarEmpregado(@PathVariable Long tarefaId, @RequestBody EmpregadoCriarDTO empregado){
+        Optional<Tarefa> optionalTarefa = tarefaServico.adicionarEmpregado(tarefaId,empregado.converter());
+        return optionalTarefa.map(tarefa -> ResponseEntity.ok(dtoStaticFactory.tarefaDTO(tarefa)))
+                .orElseGet(()->ResponseEntity.badRequest().build());
     }
 }

@@ -1,5 +1,6 @@
 package pt.ufp.info.esof.Models;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,6 +9,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
+@EqualsAndHashCode
 public class Tarefa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
