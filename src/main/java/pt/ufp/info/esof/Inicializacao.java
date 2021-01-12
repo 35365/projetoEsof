@@ -4,8 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
-import pt.ufp.info.esof.Models.*;
-import pt.ufp.info.esof.Repositorio.*;
+import pt.ufp.info.esof.modelos.Cliente;
+import pt.ufp.info.esof.modelos.Empregado;
+import pt.ufp.info.esof.modelos.Projeto;
+import pt.ufp.info.esof.modelos.Tarefa;
+import pt.ufp.info.esof.repositorio.ClienteRepositorio;
+import pt.ufp.info.esof.repositorio.EmpregadoRepositorio;
+import pt.ufp.info.esof.repositorio.ProjetoRepositorio;
 
 @Component
 public class Inicializacao implements ApplicationListener<ContextRefreshedEvent> {

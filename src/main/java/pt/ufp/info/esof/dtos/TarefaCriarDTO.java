@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import pt.ufp.info.esof.Models.Tarefa;
+import pt.ufp.info.esof.modelos.Tarefa;
 
 @Data
 @Builder

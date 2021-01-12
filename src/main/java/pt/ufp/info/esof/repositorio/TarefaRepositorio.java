@@ -1,8 +1,8 @@
-package pt.ufp.info.esof.Repositorio;
+package pt.ufp.info.esof.repositorio;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import pt.ufp.info.esof.Models.Tarefa;
+import pt.ufp.info.esof.modelos.Tarefa;
 
 import java.util.Optional;
 

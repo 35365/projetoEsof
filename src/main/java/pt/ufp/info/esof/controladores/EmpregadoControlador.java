@@ -3,7 +3,7 @@ package pt.ufp.info.esof.controladores;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import pt.ufp.info.esof.Models.Empregado;
+import pt.ufp.info.esof.modelos.Empregado;
 import pt.ufp.info.esof.dtos.DTOStaticFactory;
 import pt.ufp.info.esof.dtos.EmpregadoCriarDTO;
 import pt.ufp.info.esof.dtos.EmpregadoDTO;

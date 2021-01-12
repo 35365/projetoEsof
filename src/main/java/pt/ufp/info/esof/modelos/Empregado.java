@@ -1,4 +1,4 @@
-package pt.ufp.info.esof.Models;
+package pt.ufp.info.esof.modelos;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.EqualsAndHashCode;

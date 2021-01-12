@@ -2,8 +2,8 @@ package pt.ufp.info.esof.servicos;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pt.ufp.info.esof.Models.Empregado;
-import pt.ufp.info.esof.Repositorio.EmpregadoRepositorio;
+import pt.ufp.info.esof.modelos.Empregado;
+import pt.ufp.info.esof.repositorio.EmpregadoRepositorio;
 
 import java.util.ArrayList;
 import java.util.List;

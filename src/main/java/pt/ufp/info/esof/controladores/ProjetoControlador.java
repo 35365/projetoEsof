@@ -3,8 +3,13 @@ package pt.ufp.info.esof.controladores;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import pt.ufp.info.esof.Models.Projeto;
-import pt.ufp.info.esof.dtos.*;
+import pt.ufp.info.esof.modelos.Projeto;
+import pt.ufp.info.esof.dtos.DTOStaticFactory;
+import pt.ufp.info.esof.dtos.ProjetoDTO;
+import pt.ufp.info.esof.dtos.ProjetoCriarDTO;
+import pt.ufp.info.esof.dtos.TarefaCriarDTO;
+import pt.ufp.info.esof.dtos.ProjetoValorDTO;
+import pt.ufp.info.esof.dtos.ProjetoTempoDTO;
 import pt.ufp.info.esof.servicos.ProjetoServico;
 
 import java.util.ArrayList;

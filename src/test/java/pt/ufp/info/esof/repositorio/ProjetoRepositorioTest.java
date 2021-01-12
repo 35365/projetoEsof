@@ -1,13 +1,16 @@
-package pt.ufp.info.esof.Repositorio;
+package pt.ufp.info.esof.repositorio;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import pt.ufp.info.esof.Models.Cliente;
-import pt.ufp.info.esof.Models.Projeto;
-import pt.ufp.info.esof.Models.Tarefa;
+import pt.ufp.info.esof.modelos.Cliente;
+import pt.ufp.info.esof.modelos.Projeto;
+import pt.ufp.info.esof.modelos.Tarefa;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 @DataJpaTest
 class ProjetoRepositorioTest {
     @Autowired

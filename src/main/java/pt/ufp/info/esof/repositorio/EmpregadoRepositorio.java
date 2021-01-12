@@ -1,9 +1,9 @@
-package pt.ufp.info.esof.Repositorio;
+package pt.ufp.info.esof.repositorio;
 
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import pt.ufp.info.esof.Models.Empregado;
+import pt.ufp.info.esof.modelos.Empregado;
 
 import java.util.Optional;
 

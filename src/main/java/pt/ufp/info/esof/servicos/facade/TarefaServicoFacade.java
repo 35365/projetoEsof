@@ -1,8 +1,8 @@
 package pt.ufp.info.esof.servicos.facade;
 
 import org.springframework.stereotype.Service;
-import pt.ufp.info.esof.Models.Empregado;
-import pt.ufp.info.esof.Models.Tarefa;
+import pt.ufp.info.esof.modelos.Empregado;
+import pt.ufp.info.esof.modelos.Tarefa;
 import pt.ufp.info.esof.servicos.TarefaServico;
 
 import java.util.List;

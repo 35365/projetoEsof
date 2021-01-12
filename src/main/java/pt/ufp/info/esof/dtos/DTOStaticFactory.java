@@ -1,8 +1,8 @@
 package pt.ufp.info.esof.dtos;
 
-import pt.ufp.info.esof.Models.Empregado;
-import pt.ufp.info.esof.Models.Projeto;
-import pt.ufp.info.esof.Models.Tarefa;
+import pt.ufp.info.esof.modelos.Empregado;
+import pt.ufp.info.esof.modelos.Projeto;
+import pt.ufp.info.esof.modelos.Tarefa;
 
 /**
  * Fábrica estática para criação de DTO's
@@ -15,9 +15,6 @@ public class DTOStaticFactory {
      * Implementa a lógica necessária para garantir uma única instância da fábrica estática
      */
     private static DTOStaticFactory dtoAbstractFactory;
-
-    public DTOStaticFactory() {
-    }
 
     public static DTOStaticFactory getInstance(){
         if(dtoAbstractFactory==null){

@@ -1,6 +1,6 @@
 package pt.ufp.info.esof.servicos;
 
-import pt.ufp.info.esof.Models.Empregado;
+import pt.ufp.info.esof.modelos.Empregado;
 
 import java.util.List;
 import java.util.Optional;

@@ -2,9 +2,9 @@ package pt.ufp.info.esof.servicos.facade;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pt.ufp.info.esof.Models.Empregado;
-import pt.ufp.info.esof.Models.Tarefa;
-import pt.ufp.info.esof.Repositorio.TarefaRepositorio;
+import pt.ufp.info.esof.modelos.Empregado;
+import pt.ufp.info.esof.modelos.Tarefa;
+import pt.ufp.info.esof.repositorio.TarefaRepositorio;
 
 import java.util.Optional;
 

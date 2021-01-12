@@ -1,7 +1,7 @@
 package pt.ufp.info.esof.servicos;
 
-import pt.ufp.info.esof.Models.Projeto;
-import pt.ufp.info.esof.Models.Tarefa;
+import pt.ufp.info.esof.modelos.Projeto;
+import pt.ufp.info.esof.modelos.Tarefa;
 
 import java.util.List;
 import java.util.Optional;

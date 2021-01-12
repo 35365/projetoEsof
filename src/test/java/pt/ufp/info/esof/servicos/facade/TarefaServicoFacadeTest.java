@@ -4,14 +4,15 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import pt.ufp.info.esof.Models.Empregado;
-import pt.ufp.info.esof.Models.Tarefa;
+import pt.ufp.info.esof.modelos.Empregado;
+import pt.ufp.info.esof.modelos.Tarefa;
 import pt.ufp.info.esof.servicos.TarefaServico;
 
 import java.util.ArrayList;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.when;
 @SpringBootTest(classes =TarefaServicoFacade.class)
 class TarefaServicoFacadeTest {
