@@ -8,6 +8,7 @@ import pt.ufp.info.esof.Models.Empregado;
 import pt.ufp.info.esof.Models.Tarefa;
 import pt.ufp.info.esof.servicos.TarefaServico;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -22,6 +23,9 @@ class TarefaServicoFacadeTest {
 
     @MockBean
     private AdicionarEmpregadoUseCase adicionarEmpregadoUseCase;
+
+    @MockBean
+    private ListarTodosUseCase listarTodosUseCase;
 
     @Test
     void criarTarefa() {
@@ -45,5 +49,11 @@ class TarefaServicoFacadeTest {
         assertTrue(tarefaServico.adicionarEmpregado(1L,new Empregado()).isPresent());
 
         assertTrue(tarefaServico.adicionarEmpregado(6L,new Empregado()).isEmpty());
+    }
+
+    @Test
+    void findAll() {
+        when(listarTodosUseCase.findAll()).thenReturn(new ArrayList<>());
+        assertNotNull(tarefaServico.findAll());
     }
 }

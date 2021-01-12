@@ -11,6 +11,8 @@ import pt.ufp.info.esof.Models.Projeto;
 import pt.ufp.info.esof.dtos.TarefaCriarDTO;
 import pt.ufp.info.esof.servicos.ProjetoServico;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import static org.mockito.Mockito.when;
@@ -63,7 +65,16 @@ class ProjetoControladorTest {
     }
 
     @Test
-    void getValorProjetoById() {
+    void getValorProjetoById() throws Exception {
+        when(projetoServico.findById(1L)).thenReturn(Optional.of(new Projeto()));
+
+        mockMvc.perform(
+                get("/projeto/1")
+        ).andExpect(status().isOk());
+
+        mockMvc.perform(
+                get("/projeto/3")
+        ).andExpect(status().isNotFound());
     }
 
     @Test
@@ -80,6 +91,27 @@ class ProjetoControladorTest {
     }
 
     @Test
-    void getTempoProjetoById() {
+    void getTempoProjetoById() throws Exception {
+        when(projetoServico.findById(1L)).thenReturn(Optional.of(new Projeto()));
+
+        mockMvc.perform(
+                get("/projeto/1")
+        ).andExpect(status().isOk());
+
+        mockMvc.perform(
+                get("/projeto/3")
+        ).andExpect(status().isNotFound());
+    }
+
+    @Test
+    void getAllProjeto() throws Exception {
+        List<Projeto> projetos = new ArrayList<>();
+        projetos.add(new Projeto());
+
+        when(projetoServico.findAll()).thenReturn(projetos);
+
+        mockMvc.perform(
+                get("/projeto")
+        ).andExpect(status().isOk());
     }
 }

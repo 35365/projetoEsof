@@ -5,8 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import pt.ufp.info.esof.Models.Projeto;
+import pt.ufp.info.esof.Models.Tarefa;
 import pt.ufp.info.esof.Repositorio.ProjetoRepositorio;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -33,5 +35,27 @@ class ProjetoServicoImplTest {
 
         when(projetoRepositorio.findByNome(nome)).thenReturn(Optional.of(projeto));
         assertTrue(projetoServico.criarProjeto(projeto).isEmpty());
+    }
+
+    @Test
+    void adicionarTarefa() {
+        Projeto projeto = new Projeto();
+        Tarefa tarefa = new Tarefa();
+        when(projetoServico.adicionarTarefa(1L,tarefa)).thenReturn(Optional.of(projeto));
+        assertTrue(projetoServico.adicionarTarefa(1L,tarefa).isPresent());
+        assertTrue(projetoServico.adicionarTarefa(5L,tarefa).isEmpty());
+    }
+
+    @Test
+    void findById() {
+        when(projetoRepositorio.findById(1L)).thenReturn(Optional.of(new Projeto()));
+        assertTrue(projetoServico.findById(1L).isPresent());
+        assertTrue(projetoServico.findById(5L).isEmpty());
+    }
+
+    @Test
+    void findAll() {
+        when(projetoRepositorio.findAll()).thenReturn(new ArrayList<>());
+        assertNotNull(projetoServico.findAll());
     }
 }

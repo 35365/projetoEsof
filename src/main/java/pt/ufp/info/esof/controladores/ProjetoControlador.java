@@ -7,6 +7,8 @@ import pt.ufp.info.esof.Models.Projeto;
 import pt.ufp.info.esof.dtos.*;
 import pt.ufp.info.esof.servicos.ProjetoServico;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -60,6 +62,13 @@ public class ProjetoControlador {
             ProjetoTempoDTO projetoTempoDTO=dtoStaticFactory.projetoTempoDTO(projeto);
             return ResponseEntity.ok(projetoTempoDTO);
         }).orElseGet(()-> ResponseEntity.notFound().build());
+    }
+
+    @GetMapping()
+    public ResponseEntity<Iterable<ProjetoDTO>> getAllProjeto(){
+        List<ProjetoDTO> projetoDTOS = new ArrayList<>();
+        projetoServico.findAll().forEach(projeto -> projetoDTOS.add(dtoStaticFactory.projetoDTO(projeto)));
+        return ResponseEntity.ok(projetoDTOS);
     }
 
 }

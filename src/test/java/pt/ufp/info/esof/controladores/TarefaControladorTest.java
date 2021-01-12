@@ -11,6 +11,8 @@ import pt.ufp.info.esof.Models.Tarefa;
 import pt.ufp.info.esof.dtos.EmpregadoCriarDTO;
 import pt.ufp.info.esof.servicos.TarefaServico;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import static org.mockito.Mockito.when;
@@ -68,5 +70,18 @@ class TarefaControladorTest {
                 patch("/tarefa/5")
                         .content(empregadoJson).contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    void getAllTarefas() throws Exception {
+
+        List<Tarefa> tarefas = new ArrayList<>();
+        tarefas.add(new Tarefa());
+
+        when(tarefaServico.findAll()).thenReturn(tarefas);
+
+        mockMvc.perform(
+                get("/tarefa")
+        ).andExpect(status().isOk());
     }
 }

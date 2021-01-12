@@ -10,6 +10,8 @@ import pt.ufp.info.esof.dtos.TarefaCriarDTO;
 import pt.ufp.info.esof.dtos.TarefaDTO;
 import pt.ufp.info.esof.servicos.TarefaServico;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -34,5 +36,12 @@ public class TarefaControlador {
         Optional<Tarefa> optionalTarefa = tarefaServico.adicionarEmpregado(tarefaId,empregado.converter());
         return optionalTarefa.map(tarefa -> ResponseEntity.ok(dtoStaticFactory.tarefaDTO(tarefa)))
                 .orElseGet(()->ResponseEntity.badRequest().build());
+    }
+
+    @GetMapping()
+    public ResponseEntity<Iterable<TarefaDTO>> getAllTarefas(){
+        List<TarefaDTO> tarefaDTOS = new ArrayList<>();
+        tarefaServico.findAll().forEach(tarefa -> tarefaDTOS.add(dtoStaticFactory.tarefaDTO(tarefa)));
+        return ResponseEntity.ok(tarefaDTOS);
     }
 }

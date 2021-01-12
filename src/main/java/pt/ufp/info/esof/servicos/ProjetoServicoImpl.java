@@ -6,6 +6,8 @@ import pt.ufp.info.esof.Models.Projeto;
 import pt.ufp.info.esof.Models.Tarefa;
 import pt.ufp.info.esof.Repositorio.ProjetoRepositorio;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -47,5 +49,12 @@ public class ProjetoServicoImpl  implements ProjetoServico{
     @Override
     public Optional<Projeto> findById(long id) {
         return projetoRepositorio.findById(id);
+    }
+
+    @Override
+    public List<Projeto> findAll() {
+        List<Projeto> projetos=new ArrayList<>();
+        projetoRepositorio.findAll().forEach(projetos::add);
+        return projetos;
     }
 }
