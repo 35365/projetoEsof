@@ -4,7 +4,7 @@ skinparam classAttributeIconSize 0
 package "main/java/pt/ufp/info/esof/Models"{
 
     class Utilizador{
-            - userName:String
+            - username:String
             - password:String
             - nome:String
     }
@@ -12,12 +12,14 @@ package "main/java/pt/ufp/info/esof/Models"{
         + adicionarProjeto(Projeto projeto):void
     }
     class Projeto{
+        - nome:String
         - percentual:int
         + tempoEstimado():float
         + valorEstimado():float
         + getEstado():void
     }
     class Tarefa{
+        - nome:String
         - efetiva:boolean
         + horasEstimadas():float
         + custo(): float

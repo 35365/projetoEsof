@@ -7,6 +7,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+import pt.ufp.info.esof.dtos.ProjetoValorDTO;
 import pt.ufp.info.esof.modelos.Projeto;
 import pt.ufp.info.esof.dtos.TarefaCriarDTO;
 import pt.ufp.info.esof.servicos.ProjetoServico;
@@ -68,6 +69,8 @@ class ProjetoControladorTest {
 
     @Test
     void getValorProjetoById() throws Exception {
+        ProjetoValorDTO projetoValorDTO= new ProjetoValorDTO();
+        projetoValorDTO.setValor(10);
         when(projetoServico.findById(1L)).thenReturn(Optional.of(new Projeto()));
 
         mockMvc.perform(
