@@ -21,7 +21,7 @@ public class Projeto {
     private String nome;
 
     @OneToMany(mappedBy = "projeto")
-    private List<Tarefa> tarefas = new ArrayList<Tarefa>();
+    private List<Tarefa> tarefas = new ArrayList<>();
     @ManyToOne
     private Cliente cliente;
 
@@ -49,10 +49,10 @@ public class Projeto {
 
     /**
      * Devolve o estado com base em estimativas iniciais e tarefas efetivas
-     */
+
     public void getEstado(){
         System.out.println("Tempo estimado:"+tempoEstimado()+"Percentual do projeto:"+percentual+"\n");
-    }
+    }*/
 
     @Override
     public String toString() {

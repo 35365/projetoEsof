@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import pt.ufp.info.esof.Models.Projeto;
-import pt.ufp.info.esof.Repositorio.EmpregadoRepositorio;
 import pt.ufp.info.esof.Repositorio.ProjetoRepositorio;
 
 import java.util.Optional;

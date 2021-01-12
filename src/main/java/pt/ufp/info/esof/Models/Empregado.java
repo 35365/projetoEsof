@@ -29,7 +29,7 @@ public class Empregado extends Utilizador{
     private int horasTarefa;
     @JsonIgnore
     @OneToMany(mappedBy = "empregado",cascade = CascadeType.ALL)
-    private List<Tarefa> tarefas = new ArrayList<Tarefa>();
+    private List<Tarefa> tarefas = new ArrayList<>();
 
     public int valorHora(){
         if(cargo==Cargo.DesenvolvedorJunior){

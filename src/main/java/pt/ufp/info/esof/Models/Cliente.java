@@ -18,7 +18,7 @@ public class Cliente extends Utilizador{
     private Long id;
 
     @OneToMany(mappedBy = "cliente")
-    private List<Projeto> projetos = new ArrayList<Projeto>();
+    private List<Projeto> projetos = new ArrayList<>();
 
     public void adicionarProjeto(Projeto projeto){
         if(!projetos.contains(projeto)){
